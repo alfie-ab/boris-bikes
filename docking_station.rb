@@ -13,7 +13,7 @@ class DockingStation
 
   def release_bike
     if @docked_bikes.empty?
-      fail
+      raise "No bikes in docking station"
     else
       returned_bike = @docked_bikes[0]
       @docked_bikes.delete(@docked_bikes[0])
