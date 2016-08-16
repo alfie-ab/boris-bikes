@@ -6,9 +6,11 @@ end
 
 class DockingStation
   attr_reader :docked_bikes
+  attr_reader :capacity
 
-  def initialize
+  def initialize(capacity = 99)
     @docked_bikes = []
+    @capacity = capacity
   end
 
   def release_bike
@@ -22,6 +24,10 @@ class DockingStation
   end
 
   def dock_bike(bike)
-    @docked_bikes << bike
+    if @docked_bikes.count >= @capacity
+      raise "This docking station is full"
+    else
+      @docked_bikes << bike
+    end
   end
 end
