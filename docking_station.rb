@@ -1,5 +1,11 @@
+class Bike
+  def working?
+
+  end
+end
+
 class DockingStation
   def release_bike
-    @working = true
+    return "test"
   end
 end
