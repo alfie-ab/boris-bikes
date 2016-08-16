@@ -13,7 +13,7 @@ class DockingStation
 
   def release_bike
     if @docked_bikes.empty?
-      "Sorry, there are no bikes left."
+      fail
     else
       returned_bike = @docked_bikes[0]
       @docked_bikes.delete(@docked_bikes[0])

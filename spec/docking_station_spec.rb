@@ -14,4 +14,8 @@ describe DockingStation do
   end
 
   it { is_expected.to respond_to(:dock_bike).with(1).argument}
+
+  it 'should raise an error when you try to get a bike from an empty station' do
+    expect {DockingStation.new.release_bike}.to raise_error
+  end
 end
